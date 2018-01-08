@@ -1,23 +1,15 @@
-// import { Component } from '@angular/core';
-
-// @Component({
-//   selector: 'app-root',
-//   templateUrl: './app.component.html',
-//   styleUrls: ['./app.component.css']
-// })
-// export class AppComponent {
-//   title = 'app';  
-// }
 import {Component} from '@angular/core';
+
+
+
 @Component({
 selector:'app-root',
-template:`<div>
-<h1>{{pageTitle}}</h1>
-</div><br/>`
+// templateUrl:'./app.component.html'
+templateUrl:'./app.component.html'
 
 })
 
 export class AppComponent{
-pageTitle: string = 'Shiv World';
+pageTitle: string = 'Shiv World 1';
 
 }
