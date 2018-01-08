@@ -18,6 +18,6 @@ template:`<div>
 })
 
 export class AppComponent{
-pageTitle: string = 'Shiv World Application';
+pageTitle: string = 'Shiv World';
 
 }
