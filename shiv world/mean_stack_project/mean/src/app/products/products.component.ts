@@ -1,15 +1,45 @@
 import {Component} from '@angular/core'
+import { IProducts } from './products';
+import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+
 
 @Component({
     selector: 'pm-products',
-    templateUrl:'./products.component.html'
+    templateUrl:'./products.component.html',
+    styleUrls:['./products.component.css']
 })
 
-export class ProductsComponent{
+export class ProductsComponent implements OnInit{
+    constructor(){
+        this.filteredProducts = this.products;
+        this.filterText = 'cart';
+    }
     
     pageTitle: string = "Products List";
-    productList:string = "Products List";
-    products: any[] = [{
+    showImage: boolean = true;
+    buttonText: string = 'Show Image'
+    productList:string = "Products List";    
+    _filterText: string;    
+    get filterText() : string{
+    return this._filterText;
+    }
+    set filterText(value:string){
+        this._filterText = value;
+        this.filteredProducts = this.filterText ? this.performFilter(this.filterText) : this.products
+    }
+
+    performFilter(filterby: string): IProducts[]{
+        filterby = filterby.toLocaleLowerCase();
+        return this.products.filter((product:IProducts) =>
+        product.productName.toLocaleLowerCase().indexOf(filterby) !== -1);        
+
+    }
+    
+    ChangeImage(): void{
+        this.showImage = !this.showImage;        
+    } 
+    filteredProducts: IProducts[];
+    products: IProducts[] = [{
         "productId": 1,
         "productName": "Leaf Rake",
         "productCode": "GDN-0011",
@@ -17,7 +47,7 @@ export class ProductsComponent{
         "description": "Leaf rake with 48-inch wooden handle.",
         "price": 19.95,
         "starRating": 3.2,
-        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+        "imageUrl": "src/assets/images/Leaf-Rake.png"
     },
     {
         "productId": 2,
@@ -27,7 +57,7 @@ export class ProductsComponent{
         "description": "15 gallon capacity rolling garden cart",
         "price": 32.99,
         "starRating": 4.2,
-        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+        "imageUrl": "src/assets/images/garden-cart.png"
     },
     {
         "productId": 5,
@@ -37,17 +67,17 @@ export class ProductsComponent{
         "description": "Curved claw steel hammer",
         "price": 8.9,
         "starRating": 4.8,
-        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+        "imageUrl": "src/assets/images/rejon-Hammer.png"
     },
     {
-        "productId": 8,
+        "productId": 8,        
         "productName": "Saw",
         "productCode": "TBX-0022",
         "releaseDate": "May 15, 2016",
         "description": "15-inch steel blade hand saw",
         "price": 11.55,
         "starRating": 3.7,
-        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
+        "imageUrl": "src/assets/images/egore911-saw.png"
     },
     {
         "productId": 10,
@@ -57,6 +87,9 @@ export class ProductsComponent{
         "description": "Standard two-button video game controller",
         "price": 35.95,
         "starRating": 4.6,
-        "imageUrl": "https://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+        "imageUrl": "src/assets/images/xbox-controller-01.png"
     }];
+    ngOnInit():void{
+    
+    }
 }
