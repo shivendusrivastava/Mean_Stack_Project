@@ -3,6 +3,7 @@ import { IProducts } from './products';
 import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 
+
 @Component({
     selector: 'pm-products',
     templateUrl:'./products.component.html',
@@ -47,7 +48,7 @@ export class ProductsComponent implements OnInit{
         "description": "Leaf rake with 48-inch wooden handle.",
         "price": 19.95,
         "starRating": 3.2,
-        "imageUrl": "src/assets/images/Leaf-Rake.png"
+        "imageUrl": "../../assets/images/Leaf-Rake.png"
     },
     {
         "productId": 2,
@@ -57,7 +58,7 @@ export class ProductsComponent implements OnInit{
         "description": "15 gallon capacity rolling garden cart",
         "price": 32.99,
         "starRating": 4.2,
-        "imageUrl": "src/assets/images/garden-cart.png"
+        "imageUrl": "../../assets/images/garden-cart.png"
     },
     {
         "productId": 5,
@@ -67,7 +68,7 @@ export class ProductsComponent implements OnInit{
         "description": "Curved claw steel hammer",
         "price": 8.9,
         "starRating": 4.8,
-        "imageUrl": "src/assets/images/rejon-Hammer.png"
+        "imageUrl": "../../assets/images/rejon-Hammer.png"
     },
     {
         "productId": 8,        
@@ -77,7 +78,7 @@ export class ProductsComponent implements OnInit{
         "description": "15-inch steel blade hand saw",
         "price": 11.55,
         "starRating": 3.7,
-        "imageUrl": "src/assets/images/egore911-saw.png"
+        "imageUrl": "../../assets/images/egore911-saw.png"
     },
     {
         "productId": 10,
@@ -87,7 +88,7 @@ export class ProductsComponent implements OnInit{
         "description": "Standard two-button video game controller",
         "price": 35.95,
         "starRating": 4.6,
-        "imageUrl": "src/assets/images/xbox-controller-01.png"
+        "imageUrl": "../../assets/images/xbox-controller-01.png"
     }];
     ngOnInit():void{
     
