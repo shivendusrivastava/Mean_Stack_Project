@@ -24,8 +24,15 @@ export class ProductsComponent implements OnInit{
     get filterText() : string{
     return this._filterText;
     }
+    //filter from setter propeerty of filtertext
     set filterText(value:string){
         this._filterText = value;
+        //this.filteredProducts = this.filterText ? this.performFilter(this.filterText) : this.products
+    }
+    
+    //filter from ngmodel change 
+    changefilter(filtertxt): void {
+        console.log(filtertxt);
         this.filteredProducts = this.filterText ? this.performFilter(this.filterText) : this.products
     }
 
@@ -91,6 +98,7 @@ export class ProductsComponent implements OnInit{
         "imageUrl": "../../assets/images/xbox-controller-01.png"
     }];
     ngOnInit():void{
-    
+        //used to initialize the filter pre written text as using ngmodelchange which will only fire on change , not on initial value
+        this.filteredProducts = this.filterText ? this.performFilter(this.filterText) : this.products
     }
 }

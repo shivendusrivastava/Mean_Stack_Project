@@ -5,7 +5,7 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-md-2">filter by:</div>
-            <div class="col-md-4"><input type="text" [(ngModel)]="filterText" class="form-control"/>
+            <div class="col-md-4"><input type="text" [(ngModel)]="filterText" (ngModelChange)="changefilter(filterText)" class="form-control"/>
             </div>
         </div>
         <div class="row">
