@@ -5,7 +5,7 @@
     <div class="panel-body">
         <div class="row">
             <div class="col-md-2">filter by:</div>
-            <div class="col-md-4"><input type="text" [(ngModel)]="filterText" (ngModelChange)="changefilter(filterText)" class="form-control"/>
+            <div class="col-md-4"><input type="text" [(ngModel)]="filterText" class="form-control"/>
             </div>
         </div>
         <div class="row">
@@ -33,7 +33,7 @@
                 <tbody>
                     <tr *ngFor="let product of filteredProducts">
                         <!-- <td>{{product.productId}}</td> -->
-                        <td width=5px><img [src]='product.imageUrl' [title]='product.productName' *ngIf="showImage" style="width:50%"></td>
+                        <td><img [src]='product.imageUrl' [title]='product.productName' *ngIf="showImage"></td>
                         <td>{{product.productName}}</td>
                         <td>{{product.productCode}}</td>
                         <td>{{product.releaseDate}}</td>                        

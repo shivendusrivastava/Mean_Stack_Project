@@ -10,6 +10,6 @@ templateUrl:'./app.component.html'
 })
 
 export class AppComponent{
-pageTitle: string = 'Shiv World 1';
+pageTitle: string = 'Angular World';
 
 }
