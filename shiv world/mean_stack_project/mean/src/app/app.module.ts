@@ -6,13 +6,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { AppComponent } from './app.component';
 import {ProductsComponent} from './products/products.component'
 import {AngularFormComponent} from './AngularForm/angularForm.component'
+import { StarComponent } from './shared/star.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
-    AngularFormComponent    
+    AngularFormComponent,
+    StarComponent    
   ],
   imports: [
     BrowserModule,
