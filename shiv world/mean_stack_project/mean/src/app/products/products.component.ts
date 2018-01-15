@@ -19,7 +19,8 @@ export class ProductsComponent implements OnInit{
     showImage: boolean = true;
     buttonText: string = 'Show Image'
     productList:string = "Products List";    
-    _filterText: string;    
+    _filterText: string;   
+    errorMessage: any[]; 
     get filterText() : string{
     return this._filterText;
     }
@@ -48,8 +49,13 @@ export class ProductsComponent implements OnInit{
     products: IProducts[] = [];
     ngOnInit():void{
         //used to initialize the filter pre written text as using ngmodelchange which will only fire on change , not on initial value
-        this.products = this._productService.getProducts();
-        this.filteredProducts = this.products;
+        this._productService.getProducts()
+        .subscribe(products => {
+            this.products = products;
+            this.filteredProducts = this.products;
+        }
+            ,error =>this.errorMessage = <any>error)
+        
         this.filteredProducts = this.filterText ? this.performFilter(this.filterText) : this.products
 
     }

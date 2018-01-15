@@ -9,18 +9,22 @@ import {AngularFormComponent} from './AngularForm/angularForm.component'
 import { StarComponent } from './shared/star.component';
 import { ProductsService } from './products/products.service';
 
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductsComponent,
     AngularFormComponent,
-    StarComponent    
+    StarComponent,        
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

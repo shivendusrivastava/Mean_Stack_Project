@@ -1,13 +1,14 @@
 [
     {
         "productId": 1,
-        "productName": "Leaf Rake",
+        "productName": "Leaf Rake from Http",
         "productCode": "GDN-0011",
         "releaseDate": "March 19, 2016",
         "description": "Leaf rake with 48-inch wooden handle.",
         "price": 19.95,
         "starRating": 3.2,
-        "imageUrl": "../../assets/images/egore911-saw.png"
+        "imageUrl": "../../assets/images/egore911-saw.png",
+        "imagewidth":50
     },
     {
         "productId": 2,
@@ -17,7 +18,8 @@
         "description": "15 gallon capacity rolling garden cart",
         "price": 32.99,
         "starRating": 4.2,
-        "imageUrl": "../../assets/images/garden-cart.png"
+        "imageUrl": "../../assets/images/garden-cart.png",
+        "imagewidth":50
     },
     {
         "productId": 5,
@@ -27,7 +29,8 @@
         "description": "Curved claw steel hammer",
         "price": 8.9,
         "starRating": 4.8,
-        "imageUrl": "../../assets/images/rejon-Hammer.png"
+        "imageUrl": "../../assets/images/rejon-Hammer.png",
+        "imagewidth":50
     },
     {
         "productId": 8,
@@ -37,7 +40,8 @@
         "description": "15-inch steel blade hand saw",
         "price": 11.55,
         "starRating": 3.7,
-        "imageUrl": "../../assets/images/egore911-saw.png"
+        "imageUrl": "../../assets/images/egore911-saw.png",
+        "imagewidth":50
     },
     {
         "productId": 10,
@@ -47,6 +51,7 @@
         "description": "Standard two-button video game controller",
         "price": 35.95,
         "starRating": 4.6,
-        "imageUrl": "../../assets/images/xbox-controller-01.png"
+        "imageUrl": "../../assets/images/xbox-controller-01.png",
+        "imagewidth":50
     }
 ]
