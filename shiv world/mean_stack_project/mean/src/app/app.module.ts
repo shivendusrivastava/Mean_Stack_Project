@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import {ProductsComponent} from './products/products.component'
 import {AngularFormComponent} from './AngularForm/angularForm.component'
 import { StarComponent } from './shared/star.component';
+import { ProductsService } from './products/products.service';
 
 
 @NgModule({
