@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 
 import { AppComponent } from './app.component';
@@ -23,7 +24,13 @@ import { HttpClientModule } from '@angular/common/http';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      {path:'productList',component: ProductsComponent},
+      {path:'angForm',component: AngularFormComponent },
+      {path:'',redirectTo:'productList',pathMatch:'full'}
+
+    ],{useHash:true})
     
   ],
   providers: [],
