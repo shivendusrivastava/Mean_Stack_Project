@@ -1,24 +1,38 @@
 <div *ngIf="!name; else formInfo">
-<form [formGroup]="rForm" (ngSubmit)="postData(rform.value)">
+<form [formGroup]="rForm" (ngSubmit)="postData(rForm.value)">
     <div class="form-container">
-<div class="row column">
-    <h2>Angular Reactive Form</h2>
-    <label>Name
-        <input type="text" formControlName="name">
-      </label>
-
-      <label>Description
-        <textarea  formControlName="description"></textarea>
-      </label>
-
-      <label for="validate">Minimum of 3 Characters</label>
-      <input type="checkbox" name="validate" formControlName="validate" value="1"> On
-      
-      <input type="submit" class="btn btn-default" value="Submit Form" [disabled]="!rForm.valid">
+<div class="form-group row">
+    <div class="form-group">
+        <h2>Angular Reactive Form</h2>
+    </div>
+    
+    <div class="form-group">
+        <label>Name
+            <input type="text" class="form-control" formControlName="name">
+          </label>        
+    </div>
+    <div class="alert alert-danger" *ngIf="!rForm.controls['name'].valid && rForm.controls['name'].touched">
+        {{ titleAlert }}
+    </div>
+    <div class="form-group">
+        <label>Description
+            <textarea class="form-control" formControlName="description"></textarea>
+          </label>
+    </div>
+    <div class="alert alert-danger" *ngIf="!rForm.controls['description'].valid && rForm.controls['description'].touched">
+        You must specify a description that's between 30 and 500 characters.
+    </div>
+    <div class="form-group">
+        <label for="validate">Minimum of 3 Characters </label>
+        <br>
+        <input type="checkbox" class="form-check-input" name="validate" formControlName="validate" value="1"> On
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary" value="Submit Form" [disabled]="!rForm.valid">
+    </div>
     </div>
     </div>
 </form>
-
 </div>
 
 <ng-template #formInfo>
