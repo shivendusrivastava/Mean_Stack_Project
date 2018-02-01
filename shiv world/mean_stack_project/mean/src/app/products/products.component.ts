@@ -47,11 +47,14 @@ export class ProductsComponent implements OnInit{
     } 
     filteredProducts: IProducts[];
     products: IProducts[] = [];
+    wrappedproduct: any;
     ngOnInit():void{
         //used to initialize the filter pre written text as using ngmodelchange which will only fire on change , not on initial value
         this._productService.getProducts()
         .subscribe(products => {
-            this.products = products;
+            console.log(products);
+            this.wrappedproduct = products;
+            this.products = this.wrappedproduct.data;
             this.filteredProducts = this.products;
         }
             ,error =>this.errorMessage = <any>error)
